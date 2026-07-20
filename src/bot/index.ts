@@ -6,6 +6,7 @@ import {
   Collection,
   type ChatInputCommandInteraction,
   type SlashCommandBuilder,
+  type SlashCommandOptionsOnlyBuilder,
 } from "discord.js";
 import genkeyCommand from "./commands/genkey";
 import revokekeyCommand from "./commands/revokekey";
@@ -16,7 +17,7 @@ import resetkeyCommand from "./commands/resetkey";
 import deletekeyCommand from "./commands/deletekey";
 
 export interface BotCommand {
-  data: SlashCommandBuilder | ReturnType<SlashCommandBuilder["setName"]>;
+  data: SlashCommandBuilder | SlashCommandOptionsOnlyBuilder;
   execute: (interaction: ChatInputCommandInteraction) => Promise<void>;
 }
 

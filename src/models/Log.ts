@@ -21,7 +21,7 @@ const LogSchema = new Schema<ILog>(
     details: { type: String, default: null },
     level: { type: String, enum: ["info", "warn", "error", "success"], default: "info" },
   },
-  { timestamps: true, updatedAt: false },
+  { timestamps: { createdAt: true, updatedAt: false } },
 );
 
 export async function createLog(
